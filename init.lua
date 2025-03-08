@@ -415,11 +415,26 @@ require('lazy').setup({
         -- You can put your default mappings / updates / etc. in here
         --  All the info you're looking for is in `:help telescope.setup()`
         --
-        -- defaults = {
-        --   mappings = {
-        --     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
-        --   },
-        -- },
+        defaults = {
+          mappings = {
+            i = {
+              -- ['<c-enter>'] = 'to_fuzzy_refine',
+              ['<C-Down>'] = require('telescope.actions').cycle_history_next,
+              ['<C-Up>'] = require('telescope.actions').cycle_history_prev,
+            },
+          },
+          ['layout_strategy'] = 'vertical',
+          ['sorting_strategy'] = 'ascending',
+          ['layout_config'] = {
+            vertical = {
+              height = 0.9,
+              preview_cutoff = 40,
+              prompt_position = 'bottom',
+              width = 0.9,
+            },
+          },
+          ['wrap_results'] = true,
+        },
         -- pickers = {}
         extensions = {
           ['ui-select'] = {
