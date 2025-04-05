@@ -1035,5 +1035,32 @@ require('lazy').setup({
   },
 })
 
+function JS_console_log_from_yank_register()
+  local currentLineNumber = unpack(vim.api.nvim_win_get_cursor(0))
+  local yankRegister = vim.fn.getreg '0'
+  local yankRegisterNoNewLines = string.gsub(yankRegister, '\n', '')
+  local newline = 'console.log("' .. yankRegisterNoNewLines .. '", ' .. yankRegisterNoNewLines .. ');'
+  vim.api.nvim_buf_set_lines(0, currentLineNumber, currentLineNumber, true, { newline })
+end
+vim.api.nvim_set_keymap('n', ',l', '<cmd>lua JS_console_log_from_yank_register()<cr>', {})
+
+function JS_console_log_JSON_from_yank_register()
+  local currentLineNumber = unpack(vim.api.nvim_win_get_cursor(0))
+  local yankRegister = vim.fn.getreg '0'
+  local yankRegisterNoNewLines = string.gsub(yankRegister, '\n', '')
+  local newline = 'console.log("' .. yankRegisterNoNewLines .. '", JSON.stringify(' .. yankRegisterNoNewLines .. '));'
+  vim.api.nvim_buf_set_lines(0, currentLineNumber, currentLineNumber, true, { newline })
+end
+vim.api.nvim_set_keymap('n', ',j', '<cmd>lua JS_console_log_JSON_from_yank_register()<cr>', {})
+
+function JS_console_log_type_from_yank_register()
+  local currentLineNumber = unpack(vim.api.nvim_win_get_cursor(0))
+  local yankRegister = vim.fn.getreg '0'
+  local yankRegisterNoNewLines = string.gsub(yankRegister, '\n', '')
+  local newline = 'console.log("' .. yankRegisterNoNewLines .. '", "**", typeof ' .. yankRegisterNoNewLines .. ', "**" ,' .. yankRegisterNoNewLines .. ');'
+  vim.api.nvim_buf_set_lines(0, currentLineNumber, currentLineNumber, true, { newline })
+end
+vim.api.nvim_set_keymap('n', ',t', '<cmd>lua JS_console_log_type_from_yank_register()<cr>', {})
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
