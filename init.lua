@@ -432,6 +432,12 @@ require('lazy').setup({
               -- ['<c-enter>'] = 'to_fuzzy_refine',
               ['<C-Down>'] = require('telescope.actions').cycle_history_next,
               ['<C-Up>'] = require('telescope.actions').cycle_history_prev,
+              ['<C-f>'] = 'preview_scrolling_down',
+              ['<C-b>'] = 'preview_scrolling_up',
+            },
+            n = {
+              ['<C-f>'] = 'preview_scrolling_down',
+              ['<C-b>'] = 'preview_scrolling_up',
             },
           },
           ['layout_strategy'] = 'horizontal',
