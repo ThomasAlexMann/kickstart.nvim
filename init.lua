@@ -400,7 +400,7 @@ require('lazy').setup({
         },
       },
     },
-    -- I am testing if I have vim fugitive!
+
     config = function()
       -- Telescope is a fuzzy finder that comes with a lot of different things that
       -- it can fuzzy find! It's more than just a "file finder", it can search
