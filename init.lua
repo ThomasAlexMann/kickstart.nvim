@@ -466,7 +466,8 @@ require('lazy').setup({
             require('telescope.themes').get_dropdown(),
           },
           recent_files = {
-            ['path_display'] = { 'tail' },
+            -- ['path_display'] = { 'tail' },
+            ['path_display'] = { ['shorten'] = { len = 1, exclude = { -3, -2, -1 } } },
             ['initial_mode'] = 'normal',
             show_current_file = true,
             only_cwd = true,
