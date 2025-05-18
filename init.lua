@@ -190,6 +190,8 @@ vim.keymap.set('n', '<leader>gd', '<cmd>DiffviewOpen<CR>')
 vim.keymap.set('n', '<leader>gc', '<cmd>DiffviewClose<CR>')
 vim.keymap.set('n', '<leader>gh', '<cmd>DiffviewFileHistory<CR>')
 
+vim.keymap.set('n', '<leader>b', '<cmd>BlameToggle<CR>')
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
@@ -469,7 +471,7 @@ require('lazy').setup({
             ['path_display'] = { 'tail' },
             -- ['path_display'] = { ['shorten'] = { len = 1, exclude = { -3, -2, -1 } } },
             ['initial_mode'] = 'normal',
-            show_current_file = true,
+            show_current_file = false,
             only_cwd = true,
           },
         },
@@ -939,7 +941,7 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-storm'
+      vim.cmd.colorscheme 'tokyonight-moon'
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
