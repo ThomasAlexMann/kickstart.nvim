@@ -35,12 +35,12 @@ return {
           lualine_b = {
             {
               'branch',
-              fmt = function(branch)
-                if branch:len() < 12 then
-                  return branch
-                end
-                return branch:sub(0, 12) .. '...'
-              end,
+              -- fmt = function(branch)
+              --   if branch:len() < 20 then
+              --     return branch
+              --   end
+              --   return branch:sub(0, 21) .. '...'
+              -- end,
             },
             'diff',
             'diagnostics',
