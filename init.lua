@@ -185,11 +185,6 @@ vim.opt.scrolloff = 10
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
-
-vim.keymap.set('n', '<leader>gd', '<cmd>DiffviewOpen<CR>')
-vim.keymap.set('n', '<leader>gc', '<cmd>DiffviewClose<CR>')
-vim.keymap.set('n', '<leader>gh', '<cmd>DiffviewFileHistory<CR>')
-
 vim.keymap.set('n', '<leader>b', '<cmd>BlameToggle<CR>')
 
 -- Diagnostic keymaps
@@ -258,7 +253,6 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-  'sindrets/diffview.nvim',
   {
     'iamcco/markdown-preview.nvim',
     cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
