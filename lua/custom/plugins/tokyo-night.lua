@@ -20,7 +20,7 @@ return {
           bg = '#283457',
         }
         hl.DiffText = {
-          bg = '#8080ff',
+          bg = '#09091d',
         }
       end,
     }
