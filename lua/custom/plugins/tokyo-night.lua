@@ -24,7 +24,7 @@ return {
         }
       end,
     }
-    vim.cmd.colorscheme 'tokyonight-moon'
+    vim.cmd.colorscheme 'tokyonight'
 
     -- You can configure highlights by doing something like:
     vim.cmd.hi 'Comment gui=none'
