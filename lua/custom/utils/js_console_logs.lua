@@ -18,7 +18,7 @@ vim.api.nvim_set_keymap('n', '<M-l>', '<cmd>lua JS_console_log_from_yank_registe
 function JS_console_log_JSON_from_yank_register()
   local yankRegister = vim.fn.getreg '0'
   local yankRegisterNoNewLines = string.gsub(yankRegister, '\n', '')
-  local newline = 'console.log("' .. yankRegisterNoNewLines .. '", JSON.stringify(' .. yankRegisterNoNewLines .. '));'
+  local newline = 'console.log("' .. yankRegisterNoNewLines .. '", JSON.stringify(' .. yankRegisterNoNewLines .. ', null, 4));'
   local currentLineNumber = unpack(vim.api.nvim_win_get_cursor(0))
   vim.api.nvim_buf_set_lines(0, currentLineNumber, currentLineNumber, true, { newline })
 end
