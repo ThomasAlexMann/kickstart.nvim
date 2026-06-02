@@ -60,7 +60,7 @@ return {
           },
           win_config = { -- See |diffview-config-win_config|
             position = 'left',
-            width = 60,
+            width = 70,
             win_opts = {},
           },
         },
