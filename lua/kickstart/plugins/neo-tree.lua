@@ -20,6 +20,16 @@ return {
         },
       },
     },
+    default_component_configs = {
+      indent = {
+
+        indent_size = 5,
+        padding = 0, -- extra padding on left hand side
+        -- indent guides
+        with_markers = true,
+      },
+    },
+
     cmd = 'Neotree',
     keys = {
       { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
