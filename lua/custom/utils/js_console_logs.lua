@@ -2,9 +2,10 @@ function JS_console_log_blank()
   local newline = 'console.log("");'
   local currentLineNumber = unpack(vim.api.nvim_win_get_cursor(0))
   vim.api.nvim_buf_set_lines(0, currentLineNumber, currentLineNumber, true, { newline })
+  vim.api.nvim_win_set_cursor(0, { currentLineNumber + 1, 0 })
+  vim.api.nvim_input 'ci"'
 end
 vim.api.nvim_set_keymap('n', '<M-b>', '<cmd>lua JS_console_log_blank()<cr>', {})
--- TODO - place the cursor at the "" in the console.log
 
 function JS_console_log_from_yank_register()
   local yankRegister = vim.fn.getreg '0'
