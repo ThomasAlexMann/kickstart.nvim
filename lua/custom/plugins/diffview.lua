@@ -232,9 +232,9 @@ return {
           },
         },
       }
-      vim.keymap.set('n', '<leader>gd', '<cmd>DiffviewOpen<CR>')
-      vim.keymap.set('n', '<leader>gc', '<cmd>DiffviewClose<CR>')
-      vim.keymap.set('n', '<leader>gh', '<cmd>DiffviewFileHistory<CR>')
+      vim.keymap.set('n', '<leader>d', '<cmd>DiffviewOpen<CR>')
+      vim.keymap.set('n', '<leader>c', '<cmd>DiffviewClose<CR>')
+      vim.keymap.set('n', '<leader>#', '<cmd>DiffviewFileHistory<CR>')
     end,
   },
 }

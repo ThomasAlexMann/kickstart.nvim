@@ -422,9 +422,9 @@ require('lazy').setup({
 
       -- See `:help telescope.builtin`
       local builtin = require 'telescope.builtin'
-      vim.keymap.set('n', '<leader>sgh', '<cmd>Telescope git_file_history<CR>', { desc = '[S]earch [G]it file [H]istory' })
+      vim.keymap.set('n', '<leader>sfh', '<cmd>Telescope git_file_history<CR>', { desc = '[S]earch git [F]ile [H]istory' })
       vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
-      vim.keymap.set('n', '<leader>sgb', builtin.git_branches, { desc = '[S]earch [G]it [B]ranches' })
+      vim.keymap.set('n', '<leader>;', builtin.git_branches, { desc = '[S]earch [G]it [B]ranches' })
       vim.keymap.set('n', '<leader>sgc', builtin.git_commits, { desc = '[S]earch [G]it [C]ommits' })
       -- vim.keymap.set('n', '<leader>sgh', builtin.git_bcommits, { desc = '[S]earch [G]it current buffer [H]istory' })
       vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
