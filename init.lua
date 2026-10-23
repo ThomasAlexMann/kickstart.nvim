@@ -36,6 +36,8 @@ Kickstart Guide:
 
 If you experience any errors while trying to install kickstart, run `:checkhealth` for more info.
 
+
+
 --]]
 
 -- Set <space> as the leader key
@@ -43,6 +45,9 @@ If you experience any errors while trying to install kickstart, run `:checkhealt
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+
+vim.keymap.set('n', '<leader>a', '<cmd>wa<CR>', { desc = 'write All buffers' })
+vim.keymap.set('n', '<leader>', '<cmd>q<CR>', { desc = 'close buffer' })
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
@@ -372,12 +377,13 @@ require('lazy').setup({
               -- ['<c-enter>'] = 'to_fuzzy_refine',
               ['<C-Down>'] = require('telescope.actions').cycle_history_next,
               ['<C-Up>'] = require('telescope.actions').cycle_history_prev,
-              ['<C-f>'] = 'preview_scrolling_down',
-              ['<C-b>'] = 'preview_scrolling_up',
+              -- ['<C-f>'] = 'preview_scrolling_down',
+              -- ['<C-b>'] = 'preview_scrolling_up',
             },
             n = {
-              ['<C-f>'] = 'preview_scrolling_down',
-              ['<C-b>'] = 'preview_scrolling_up',
+              -- ['<C-f>'] = 'preview_scrolling_down',
+              -- ['<C-b>'] = 'preview_scrolling_up',
+              ['<C-h>'] = 'preview_scrolling_left',
             },
           },
           ['layout_strategy'] = 'horizontal',
